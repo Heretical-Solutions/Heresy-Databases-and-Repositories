@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace HereticalSolutions.Repositories.Factories
 {
-	public static class RepositoryFactory
+	public static partial class RepositoriesFactory
 	{
 		public static DictionaryRepository<TKey, TValue> BuildDictionaryRepository<TKey, TValue>()
 		{
