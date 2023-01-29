@@ -1,0 +1,15 @@
+{
+  "name": "com.hereticalsolutions.heresy-databases-and-repositories",
+  "version": "0.1.1",
+  "displayName": "Heresy Databases and Repositories",
+  "description": "Databases and repositories",
+  "unity": "2020.3",
+  "keywords": [
+    "memory",
+    "heretical-solutions"
+  ],
+  "author": {
+    "name": "BenevolentDrone",
+    "email": "benevolentdrone@gmail.com"
+  }
+}
