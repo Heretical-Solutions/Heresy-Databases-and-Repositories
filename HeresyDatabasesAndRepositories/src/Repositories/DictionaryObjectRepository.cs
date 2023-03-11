@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using HereticalSolutions.Repositories.Factories;
 
 namespace HereticalSolutions.Repositories
 {
@@ -8,12 +9,13 @@ namespace HereticalSolutions.Repositories
 	/// </summary>
 	public class DictionaryObjectRepository :
 		IObjectRepository,
-		IReadOnlyObjectRepository
+		IReadOnlyObjectRepository,
+		ICloneableObjectRepository
 	{
 		/// <summary>
 		/// Actual storage
 		/// </summary>
-		protected IRepository<Type, object> database;
+		private readonly IRepository<Type, object> database;
 
 		public DictionaryObjectRepository(IRepository<Type, object> database)
 		{
@@ -104,6 +106,11 @@ namespace HereticalSolutions.Repositories
 		public IEnumerable<Type> Keys
 		{
 			get => database.Keys;
+		}
+
+		public IObjectRepository Clone()
+		{
+			return RepositoriesFactory.CloneDictionaryObjectRepository(database);
 		}
 	}
 }
